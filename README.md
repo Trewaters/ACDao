@@ -3,10 +3,14 @@
 Autonomous Collective DAO
 
 * [Gitcoin Hackathon Project Page](https://gitcoin.co/hackathon/tezos/projects/9485/autonomous-collective-dao)
+
 https://gitcoin.co/hackathon/tezos/projects/9485/autonomous-collective-dao
 
+
 [version 0.1.0](https://badge.fury.io/hooks/github)
+
 [![GitHub version](https://badge.fury.io/gh/Trewaters%2FACDao.svg)](https://badge.fury.io/gh/Trewaters%2FACDao)
+
 
 ## Getting Started
 
