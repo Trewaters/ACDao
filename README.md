@@ -96,6 +96,10 @@ See you Comrade, where communities prosper and ideas flourish.
 - **berkeleytrue** - _Initial work_ - [berkeleytrue](https://gitcoin.co/berkeleytrue)
 - **Tre' Grisby** - _Initial work_ - [trewaters](https://gitcoin.co/trewaters)
 
+... No thanks to Mr.Humble on Discord.
+
+![Discord Logs](https://github.com/trewaters/ACDao/blob/main/image-discord_logs.jpg?raw=true)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
