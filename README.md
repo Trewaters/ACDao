@@ -98,7 +98,7 @@ See you Comrade, where communities prosper and ideas flourish.
 
 ... No thanks to Mr.Humble on Discord.
 
-![Discord Logs](https://github.com/trewaters/ACDao/blob/main/image-discord_logs.jpg?raw=true)
+![Discord Logs](https://github.com/trewaters/ACDao/blob/main/images/image-discord_logs.jpg?raw=true)
 
 ## License
 
