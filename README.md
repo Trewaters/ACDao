@@ -15,13 +15,13 @@ Autonomous Collective DAO
 
 Autonomous Collective DAO is a whitepaper.
 
-1. [Go to]() ...LINK...
-2. Connect your [Kukai Wallet](https://wallet.kukai.app/), is supported.
+1. [Go to](https://github.com/Trewaters/ACDao/blob/main/README.md) currently a whitepaper, soon to be a Dapp.
+2. Create your [Kukai Wallet](https://wallet.kukai.app/).
+3. [Smart contract hash](https://florencenet.tzkt.io/opVMT2DfDJQTNhrAfWcoDuvJAUx3KjjUwANXT2SN3UFXZzSbWun) on testnet (Florencent)
 
 ### Deployment
 
-* Contract address [...ADDRESS...](https://better-call.dev/florencenet/KT1Sk3bxiYznre9E9DejbCHHwfWseH47o4PN/)
-*on Better Call Dev tezos smart contract explorer*
+* Contract address [KT1JxYvFxCaf6ouNRnqG8Z1j7BjJfAwMJYcF](https://florencenet.tzkt.io/KT1JxYvFxCaf6ouNRnqG8Z1j7BjJfAwMJYcF/operations/)
 
 ### What the app should do?
 
@@ -83,6 +83,12 @@ Geo starts planning by joining AC DAO!
 It is that simple. Get further with Comrades! Join the Autonomous Collective and govern your funds and future dreams. Don't rely on friends, family, or the government to take care of your Financial Independence. Rely on the Pacts you make with Comrades you meet in the AC DAO community!
 
 See you Comrade, where communities prosper and ideas flourish.
+
+### Built with...
+
+- Minted tokens using [fa2-bakery](https://fa2-bakery.netlify.app/)
+- Create DAO on [Homebase Dapp](https://tezos-homebase.netlify.app/)
+- [Block Explorer](https://florencenet.tzkt.io/KT1JxYvFxCaf6ouNRnqG8Z1j7BjJfAwMJYcF/operations/)
 
 ## Authors
 
