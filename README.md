@@ -10,6 +10,7 @@ Autonomous Collective DAO
 
 [![GitHub version](https://badge.fury.io/gh/Trewaters%2FACDao.svg)](https://badge.fury.io/gh/Trewaters%2FACDao)
 
+* [video demo](https://youtu.be/F4wFGPuX57w)
 
 ## Getting Started
 
@@ -103,3 +104,5 @@ See you Comrade, where communities prosper and ideas flourish.
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+* originally inspired by [the Holy Grail](https://www.youtube.com/watch?v=ACvXR0sQDkM)
