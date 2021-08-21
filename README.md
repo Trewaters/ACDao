@@ -89,6 +89,7 @@ See you Comrade, where communities prosper and ideas flourish.
 - Minted tokens using [fa2-bakery](https://fa2-bakery.netlify.app/)
 - Create DAO on [Homebase Dapp](https://tezos-homebase.netlify.app/)
 - [Block Explorer](https://florencenet.tzkt.io/KT1JxYvFxCaf6ouNRnqG8Z1j7BjJfAwMJYcF/operations/)
+- [version badge](https://badge.fury.io/for/gh/Trewaters/ACDao) for readMe
 
 ## Authors
 
