@@ -112,7 +112,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Features
 
 ### Become a member:
-**DESCRIPTION: **
+**DESCRIPTION:**
 Membership in the Autonomous Collective Decentralized Autonomous Organization “AC Dao” requires a pairing of your tezos wallet address and a social proof.
 * “Connect” Tezos wallet.
   * Currently only using social auth wallets. 
