@@ -44,7 +44,7 @@ Leagues are based on member funding levels. Funding levels are the amounts that 
 
 Cycles is the DAOs way of tracking funding windows. The cycle is agreed on by the Pact Comrades by accepting the Pact terms. Suggested cycles are 2 weeks or 1 month. But comrades can set ANY value they wish, even down to a day. This requirement means that the full term of the Pact is determined by the number of Pact members. For example a three (3) member pact with 1 month cycles will have a Pact term of 3 months total.
 
-Pacts charge a 1% fee (based on league funding level) to all comrades when they are created. Plus each comrade will make a 20% deposit (based on league funding level) to the DAO. This deposit is returned at the end of the Pact term. A comrades deposit will also be used in full to pay missed cycle payments and thus not returned to that comrade at the end of the Pact term.
+Pacts charges a 3% (increased from 1% to 3% to cover DAO badge rewards) fee (based on league funding level) to all comrades when they are created. Plus each comrade will make a 20% deposit (based on league funding level) to the DAO. This deposit is returned at the end of the Pact term. A comrades deposit will also be used in full to pay missed cycle payments and thus not returned to that comrade at the end of the Pact term.
 
 Penalties or "Strikes" are given when a Comrade fails to pay during the cycle funding window. A member with one (1) strike has all their Pact deposits and fees doubled. The second (2nd) strike will ban that member (kukai wallet address) for life. A member can have strikes removed by paying his debt owed to the comrades plus "Apology" money which I call "Solomon's debt". The member will pay seven (7) times the amount they forfeited. This will be split amongst the Comrades they defaulted on.
 
@@ -106,3 +106,71 @@ See you Comrade, where communities prosper and ideas flourish.
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 * originally inspired by [the Holy Grail](https://www.youtube.com/watch?v=ACvXR0sQDkM)
+
+# DEVELOPER SECTION (below)
+
+## Features
+
+### Become a member:
+**DESCRIPTION: **
+Membership in the Autonomous Collective Decentralized Autonomous Organization “AC Dao” requires a pairing of your tezos wallet address and a social proof.
+* “Connect” Tezos wallet.
+  * Currently only using social auth wallets. 
+  * Example is Kukai wallet. 
+* Social Proof, 
+  * currently only allow wallets that link to Social Media like Twitter,
+  * Future Features: 
+    * Research Tezos social proof oracles.
+    * integrate a protocol/technology that enforces social profiles/ids on Tezos
+
+### “Join” League:
+**DESCRIPTION:**
+AC Dao members are encouraged to join leagues, one or many. Leagues are classified by their mandatory funding level of potential Pact contracts. Membership has a fee and forever connected to that member, they are unable to leave at a later date.
+* Member joins a league that fits their Funding level. Each cycle of the pact the member will pay this league funding level unless they have penalties for defaulting on previous Pacts.
+* AC Dao Collects a one-time 10% fee for members to join a league. This is based on the funding level of the league. So $20 league would cost $2 to join.
+
+### “Pick” (Choose) Cycle:
+**DESCRIPTION:**
+AC Dao league members start Pacts by picking a timing cycle for the payments and payouts. The Cycle is a period of time like a day, week, or month(s). The members in the new pact, from now on called Comrades, will pay their league funding amount for one (1) cycle per member in the pact.
+* Member that Creates the pact decides how many comrades can join this Pact. This could be a range, but it shouldn’t.
+* Show Comrade Payout schedule. 
+  * Date of all payments
+  * Amount of all payments
+  * Make it clear and easy to read.
+* “Lobby” (area or time period) to allow onboarding of comrades to a newly forming pact.
+  * Time limit to hold funds for potential pact.
+
+### “Create” Pact contract:
+**DESCRIPTION:**
+AC Dao pacts are agreements between comrades to pay their league funding amount each cycle of the pact. One (1) cycle per comrade. Each member also agrees to accept a one time payout equal to the league funding amount per member in the Pact. So a ten (10) member pact will have ten (10) cycles and one (1) member each cycle gets a payout equal to ten (x10) times the league funding amount.
+* Finalize the individual comrades (members) for this specific Pact
+* Finalize the Payout order to each comrade in the pact. 
+  * Start with (payout first) most senior member and end (payout last) on the most junior member. Show the dates explicitly with (projected) payout amounts. 
+  * Show Comrade Payment schedule, Amount of all payments.
+  * Make it clear and easy to read.
+* Collect 1% fee per comrade that goes into AC Dao insurance (“safety net”) fund.
+* Comrades each pay a 20% deposit up front. Equal to percentage of a single payment. The deposit is returned at the end “term” of the Pact.
+* Comrades accept terms of the Pact.
+* Show entire time of pact. Really make this clear and help folks learn more about “banking”.
+
+
+## Development server
+
+- `yarn dev`, starts localhost:3000
+
+## Code scaffolding
+
+
+## Build
+
+
+## Running unit tests
+
+
+## Running end-to-end tests
+
+
+## linting
+
+
+## Further help
