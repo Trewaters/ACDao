@@ -155,26 +155,76 @@ AC Dao pacts are agreements between comrades to pay their league funding amount 
 
 ***…time passes…***
 
-## 1st Collection:
+### 1st Collection:
 * Collect all member payments
 * Access “Strike Penalty”, add/modify penalties, adjust payment amounts based on penalties.
 
-## 1st Payout:
+### 1st Payout:
 * UX: send payment date reminders to comrades
 * Payout most senior comrade
 
-***…(n) times…***
+***…(n) time cylces…***
 
-## Final Collection:
+### Final Collection:
 * Return deposit as part of final collection.
 
-## Final Payout:
+### Final Payout:
 * Payout most junior comrade.
 * Final distribution of remaining funds. All funds are distributed at this point.
 
-## End Pact:
+### End Pact:
 * Wrap up all Pact Actions
 * Assign final penalties, if any are needed.
+
+## AC Dao UI Elements
+
+### AC Dao information
+* insurance balance 
+  * (“safety net”) 
+  * Viewable by all members of the Dao
+  * This is a known liability for all members
+  * Display data in a teachable way. Have descriptions of why things are working the way they do.
+* Governance, voting Proposals
+
+### Pact information
+* Cycle term 
+* Payout dates, Payment Schedule
+* collection dates
+* Members in this pact, seniority
+* Pact History
+* Payment status
+* League, payment amounts, could be modified by penalties
+* members of pact, member seniority during this pact, league
+
+### Member Profile
+* Pact history
+* Name
+* Wallet
+* League Membership
+* Image
+* Social Proof
+* Date of membership
+
+### League Profile
+* Funding level
+* Member count
+
+### Wallet 
+* Tezos funds and contract Navigation
+* Regular wallet features
+  * Connect Tezos wallet
+  * Wallet balance
+  * Wallet address
+  * Send Tez ?
+  * Display NFTs
+  * Tezos transactions
+* Clearly show Balances. Make it clear what is Loan, Fee, and Deposit. Also when they will get access to these funds.
+  * Pact balances
+* How to join a Pact
+* Voting (Participate) on governance
+  * Governance history
+* Transaction history on AC DAO
+- [ ] Goal: Make a modular DAO Style wallet. Something that is generally useful for any doa features.
 
 ## Development server
 
