@@ -109,7 +109,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 # DEVELOPER SECTION (below)
 
-## Features
+## AC Dao Workflow
 
 ### Become a member:
 **DESCRIPTION:**
@@ -153,6 +153,28 @@ AC Dao pacts are agreements between comrades to pay their league funding amount 
 * Comrades accept terms of the Pact.
 * Show entire time of pact. Really make this clear and help folks learn more about “banking”.
 
+***…time passes…***
+
+## 1st Collection:
+* Collect all member payments
+* Access “Strike Penalty”, add/modify penalties, adjust payment amounts based on penalties.
+
+## 1st Payout:
+* UX: send payment date reminders to comrades
+* Payout most senior comrade
+
+***…(n) times…***
+
+## Final Collection:
+* Return deposit as part of final collection.
+
+## Final Payout:
+* Payout most junior comrade.
+* Final distribution of remaining funds. All funds are distributed at this point.
+
+## End Pact:
+* Wrap up all Pact Actions
+* Assign final penalties, if any are needed.
 
 ## Development server
 
