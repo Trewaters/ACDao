@@ -111,7 +111,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## AC Dao Workflow
 
-### Become a member:
+### :simple_smile: Become a member:
 **DESCRIPTION:**
 Membership in the Autonomous Collective Decentralized Autonomous Organization “AC Dao” requires a pairing of your tezos wallet address and a social proof.
 * “Connect” Tezos wallet.
@@ -123,13 +123,13 @@ Membership in the Autonomous Collective Decentralized Autonomous Organization �
     * Research Tezos social proof oracles.
     * integrate a protocol/technology that enforces social profiles/ids on Tezos
 
-### “Join” League:
+### :green_heart: “Join” League:
 **DESCRIPTION:**
 AC Dao members are encouraged to join leagues, one or many. Leagues are classified by their mandatory funding level of potential Pact contracts. Membership has a fee and forever connected to that member, they are unable to leave at a later date.
 * Member joins a league that fits their Funding level. Each cycle of the pact the member will pay this league funding level unless they have penalties for defaulting on previous Pacts.
 * AC Dao Collects a one-time 10% fee for members to join a league. This is based on the funding level of the league. So $20 league would cost $2 to join.
 
-### “Pick” (Choose) Cycle:
+### :grey_question: “Pick” (Choose) Cycle:
 **DESCRIPTION:**
 AC Dao league members start Pacts by picking a timing cycle for the payments and payouts. The Cycle is a period of time like a day, week, or month(s). The members in the new pact, from now on called Comrades, will pay their league funding amount for one (1) cycle per member in the pact.
 * Member that Creates the pact decides how many comrades can join this Pact. This could be a range, but it shouldn’t.
@@ -140,7 +140,7 @@ AC Dao league members start Pacts by picking a timing cycle for the payments and
 * “Lobby” (area or time period) to allow onboarding of comrades to a newly forming pact.
   * Time limit to hold funds for potential pact.
 
-### “Create” Pact contract:
+### :scroll: “Create” Pact contract:
 **DESCRIPTION:**
 AC Dao pacts are agreements between comrades to pay their league funding amount each cycle of the pact. One (1) cycle per comrade. Each member also agrees to accept a one time payout equal to the league funding amount per member in the Pact. So a ten (10) member pact will have ten (10) cycles and one (1) member each cycle gets a payout equal to ten (x10) times the league funding amount.
 * Finalize the individual comrades (members) for this specific Pact
@@ -153,26 +153,26 @@ AC Dao pacts are agreements between comrades to pay their league funding amount 
 * Comrades accept terms of the Pact.
 * Show entire time of pact. Really make this clear and help folks learn more about “banking”.
 
-***…time passes…***
+***…time passes…:hourglass:***
 
-### 1st Collection:
+### :postal_horn: 1st Collection:
 * Collect all member payments
 * Access “Strike Penalty”, add/modify penalties, adjust payment amounts based on penalties.
 
-### 1st Payout:
+### :moneybag: 1st Payout:
 * UX: send payment date reminders to comrades
 * Payout most senior comrade
 
 ***…(n) time cylces…***
 
-### Final Collection:
+### :postal_horn: Final Collection:
 * Return deposit as part of final collection.
 
-### Final Payout:
+### :moneybag: Final Payout:
 * Payout most junior comrade.
 * Final distribution of remaining funds. All funds are distributed at this point.
 
-### End Pact:
+### :feet: End Pact:
 * Wrap up all Pact Actions
 * Assign final penalties, if any are needed.
 
