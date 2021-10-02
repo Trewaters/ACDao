@@ -107,7 +107,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * originally inspired by [the Holy Grail](https://www.youtube.com/watch?v=ACvXR0sQDkM)
 
-# DEVELOPER SECTION (below)
+# DEVELOPER SECTION (below :arrow_down:)
 
 ## AC Dao Workflow
 
