@@ -109,7 +109,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 # DEVELOPER SECTION (below :arrow_down:)
 
-## AC Dao Workflow
+## AC Dao, Workflow Timeline
 
 ### :smile: Become a member:
 **DESCRIPTION:**
@@ -176,7 +176,7 @@ AC Dao pacts are agreements between comrades to pay their league funding amount 
 * Wrap up all Pact Actions
 * Assign final penalties, if any are needed.
 
-## AC Dao UI Elements
+## AC Dao, UI Elements
 
 ### AC Dao information
 * insurance balance 
@@ -225,6 +225,62 @@ AC Dao pacts are agreements between comrades to pay their league funding amount 
   * Governance history
 * Transaction history on AC DAO
 - [ ] Goal: Make a modular DAO Style wallet. Something that is generally useful for any doa features.
+
+## AC Dao, Tokenomics
+
+### :green_heart: “Join” League:
+
+* $100, Member Deposit held for duration of active membership in league. Look at how this money might be able to be used by the DAO and thus yield interest for the League. Must be used in order to create yield.
+* $10, one-time fee paid to AC Dao
+
+### :scroll: “Create” Pact contract:
+
+* $100, Pact creation (Genesis) deposit, “Good Faith” money
+* $1, insurance payment to AC Dao
+* $20, Deposit held for the duration of the Pact.
+* $3, Add optional Lender at a 3% fee. Split 2% to Lender and 1% to AC Dao.
+* $1, Pact Genesis 1% fee.
+
+### :gift: Lender
+*Lending to others of this league. Substitute for missing comrade. Funds the Pact in place of the missing member.*
+
+* $100, stake funds to be used by Pact Comrades or to cover Loan Defaults.
+  * Comrades have the option of a lender..
+  * if their Pact is going into Default,
+  * if their Pact is unable to find one (1) more member. Not meant to serve as more than one (1) missing comrade of a pact. For example if a pact has (n#) comrades but needs (n#) + one (1) to create the pact this is an option they can pay for. Risk is there won’t be a Lender available for every cycle of the pact. In that case the pact would default and the “creator” of that pact should get a penalty for risky behavior that resulted in a negative experience for the pact comrades.
+  * Staking could yield 24% APY (a year) on funds.
+* $2, 2% interest paid back to Lender for staking resources
+* $1, 1% fee paid to AC Dao by comrade in Pact (not to/by Lender)
+
+### :mag_right: Distribution of Funds amongst stakeholders
+
+#### Member/Comrade
+* $100, League Deposit
+* $10, 10% League fee
+* $1, 1% Pact Insurance
+* $20, 20% Pact deposit
+* $3, optional Lender 3% service fee
+* $1, Pact Genesis 1% fee
+* $100, “Good Faith” Pact deposit
+* $100, Cycle funding Pledge
+
+#### AC Dao
+* $10, Member league fee
+* $1, Pact insurance payment
+* $1, optional Lender service fee
+* $1, Pact Genesis fee
+
+#### AC Dao Deposits
+* $100, League
+* $20, Pact
+* $100, Pact “Good Faith”
+
+#### Lender
+* $100, Pact Lending pledge
+* $2, interest based on optional member service fee
+* 24% APY
+* *Lock funds for a “standard” period/cycle of time. I like 30 days to start with.*
+
 
 ## Development server
 
