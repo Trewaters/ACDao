@@ -123,11 +123,20 @@ Membership in the Autonomous Collective Decentralized Autonomous Organization �
     * Research Tezos social proof oracles.
     * integrate a protocol/technology that enforces social profiles/ids on Tezos
 
+### Become a Lender:
+**DESCRIPTION:**
+A member who supports the DAO with funds that can be used by AC Dao to mitigate risk in the contract. Lenders funds are used to helps pacts that are in default. They are also used as a extra member to any pact. Currently at a max of one lender per pact.
+* Lender stakes funds for 30 days. While funds are staked AC Dao uses the funds to mitigate risk in the system.
+* If funds are used by AC Dao then interest is paid back to the Lender for each use of their funds. Current interest is 2%.
+
+
+
 ### :green_heart: “Join” League:
 **DESCRIPTION:**
 AC Dao members are encouraged to join leagues, one or many. Leagues are classified by their mandatory funding level of potential Pact contracts. Membership has a fee and forever connected to that member, they are unable to leave at a later date.
 * Member joins a league that fits their Funding level. Each cycle of the pact the member will pay this league funding level unless they have penalties for defaulting on previous Pacts.
 * AC Dao Collects a one-time 10% fee for members to join a league. This is based on the funding level of the league. So $20 league would cost $2 to join.
+* •	$100, Member Deposit held for duration of active membership in league. Look at how this money might be able to be used by the DAO and thus yield interest for the League. Must be used in order to create yield.
 
 ### :grey_question: “Pick” (Choose) Cycle:
 **DESCRIPTION:**
