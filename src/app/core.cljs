@@ -1,14 +1,37 @@
 (ns app.core
-  "This namespace contains your application and is the entrypoint for 'yarn start'."
-  (:require [reagent.core :as r]
-            [app.hello :refer [hello]]))
+  (:require
+    [helix.core :refer [$]]
+    [react-dom :refer [render]]
+    [redux.core :refer [react-redux-context create-store apply-middlewares]]
+    [redux.verticals :as verts]
+    [redux.dev-tool-ext :refer [dev-tools-enhancer]]
+    [redux.array-action-middleware :as array-action]
+    [app.layout :as layout]
+    [app.main.redux :as main-redux]))
 
-(defn ^:dev/after-load render
-  "Render the toplevel component for this app."
-  []
-  (r/render [hello] (.getElementById js/document "app")))
+(defonce get-state (atom (constantly nil)))
 
-(defn ^:export main
-  "Run application startup logic."
-  []
-  (render))
+(defn ^:dev/after-load create-app
+  ([] (create-app nil))
+  ([default-state]
+   (let [default-state (or (@get-state) default-state)
+         store (create-store
+                 (verts/combine-reducers
+                   (merge
+                     main-redux/reducer-slice))
+                 default-state
+                 (comp
+                   (apply-middlewares
+                     array-action/middleware)
+                   (dev-tools-enhancer)))]
+
+     (reset! get-state (:get-state store))
+     (render ($ (.-Provider react-redux-context)
+                {:value store
+                 ;; key to force re-renders on hot reload
+                 :key (rand)}
+
+                ($ layout/App))
+             (js/document.getElementById "app")))))
+
+(defn ^:export main [] (create-app))
