@@ -26,15 +26,12 @@
          :mx-4
          :text-lg
          :font-normal)}
-      "Coin Flip")
+      "Leagues")
     (d/span
       {:className
        (class-names
          :flex-grow
          :text-right)})))
-
-
-
 
 (defnc SideBar []
   (d/aside

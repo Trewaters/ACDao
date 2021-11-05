@@ -25,7 +25,7 @@
             {:className
              (class-names
                :text-4xl)}
-            "Ethernaut"))
+            "ACDao"))
         (d/section
           (d/div
             {:className "mb-5"}
