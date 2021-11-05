@@ -1,0 +1,40 @@
+{:dependencies [[binaryage/devtools "0.9.7"]
+                [devcards "0.2.6"]
+                [cider/nrepl "0.3.0"]
+                [cljs-bean "1.7.0"]
+                [lilactown/helix "0.1.3"]
+                [com.teknql/shadow-cljs-tailwind-jit "0.2.2"]]
+ :builds
+ {:app
+  {:asset-path "/js"
+   :modules {:main {:init-fn app.core/main}}
+   :output-dir "public/js"
+   :target :browser
+
+   :dev
+   {:compiler-options
+    {:output-feature-set :es6}
+    :build-hooks
+    [(teknql.tailwind/start-watch!)]}
+
+   :tailwind/output "public/css/style.css"
+   :devtools
+   {:http-root   "public/"
+    :http-port   3000
+    :preloads
+    [devtools.preload]}}
+
+  :cards {:asset-path "/js"
+          :modules {:main {:init-fn app.cards/main}}
+          :compiler-options {:devcards true}
+          :output-dir "public/js"
+          :target :browser}
+  :test {:ns-regexp "app.cards"
+         :output-to "out/test.js"
+         :target :node-test}
+  :e2e {:ns-regexp "e2e.*"
+        :output-to "out/e2e.js"
+        :target :node-test}}
+ :dev-http {3000 "public"}
+ :nrepl {:port 3333}
+ :source-paths ["src"]}
