@@ -36,6 +36,7 @@
     "zprint-clj": "~0.8.0"
   },
   "dependencies": {
+    "@airgap/beacon-sdk": "^2.3.7",
     "@taquito/beacon-wallet": "^10.2.1",
     "@taquito/taquito": "^10.2.1",
     "create-react-class": "~15.6.3",
@@ -43,6 +44,8 @@
     "react": "~16.8.0",
     "react-dom": "~16.8.0",
     "react-refresh": "^0.10.0",
-    "reselect": "^4.1.2"
+    "redux-observable": "^2.0.0",
+    "reselect": "^4.1.2",
+    "rxjs": "^6.6.7"
   }
 }

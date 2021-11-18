@@ -2,6 +2,10 @@
   (:require ["invariant" :as invariant]
             [clojure.string :as str]))
 
+(defn is-of-type
+  ([action-type] (fn [action] (= action-type (:type action))))
+  ([action-type action] (= action-type (:type action))))
+
 (def action-delimiter "|")
 
 (defn- wrap-payload-creator [payload-creator]
@@ -84,6 +88,20 @@
         (reducer new-state action))
       state
       reducers)))
+
+(defn map-from-action
+  "create a reducer from a payload mapper and a state updater
+  map-action received the Action, the result is passed as the first argument to the updater.
+  The updater received the mapped action and the current state
+  example: get the value of 'foo' from the action payload and set the
+  value to the id of the value in the foo map
+  (map-from-action
+    #(get-in % [:payload :foo])
+    #(set-in [:foos (:id %)] %))"
+  [map-action updater]
+  (fn [state action]
+    (updater (map-action action) state)))
+
 
 (defn handle-action
   ([type default-state] (handle-action type identity default-state))
