@@ -7,9 +7,10 @@
     [redux.verticals :as verts]
     [redux.dev-tool-ext :refer [dev-tools-enhancer]]
     [redux.array-action-middleware :as array-action]
-    [redux.observable :refer [create-epic-middleware]]
+    [redux.observable :refer [create-epic-middleware combine-epics]]
     [tequito.core :as tq]
     [app.layout :as layout]
+    [app.redux.epics.error-logger :refer [error-logger-epic]]
     [app.main.redux :as main-redux]
     [app.provider :as provider]))
 
@@ -34,7 +35,7 @@
                    (dev-tools-enhancer)))]
 
      (reset! get-state (:get-state store))
-     (run-epic root-epic)
+     (run-epic (combine-epics error-logger-epic root-epic))
 
      (render
        ($ (.-Provider react-redux-context)
