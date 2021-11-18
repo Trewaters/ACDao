@@ -20,6 +20,12 @@
 (defn catch-error [selector]
   (.catchError op selector))
 
+(defn ignore-elements
+  "Ignores all items emitted by the source Observableand
+  and only passes calls of complete or error."
+  []
+  (js-invoke op "ignoreElements"))
+
 (def ^:private -tap (.-tap op))
 
 (defn tap
