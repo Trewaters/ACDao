@@ -2,7 +2,7 @@
   (:require ["invariant" :as invariant]
             [clojure.string :as str]))
 
-(defn is-of-type
+(defn is-type?
   ([action-type] (fn [action] (= action-type (:type action))))
   ([action-type action] (= action-type (:type action))))
 

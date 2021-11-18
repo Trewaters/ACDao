@@ -17,6 +17,7 @@
                      (fn [] (swap! subscriptions disj subscriber)))
 
          dispatch (fn [action]
+                    (println "action: " action (type action))
                     (invariant
                       (and (map? action) (:type action))
                       (str "dispatch expects all actions to be a map with a type set but found " (or action "nil")))
@@ -25,6 +26,7 @@
                     (run! #(%) @subscriptions))]
 
      ;; dispatch INIT so that each reducer populates it's own initial state
+     ; TODO: runs but does not show in devtools
      (dispatch {:type ::INIT})
 
      {:dispatch dispatch

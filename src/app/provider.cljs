@@ -1,8 +1,9 @@
 (ns app.provider
   (:require
-    [redux.verticals :as verts :refer [create-action]]
     [rx.core :as rx]
     [rx.operators.core :as op]
+    [redux.verticals :as verts :refer [create-action]]
+    [redux.observable :as ro]
     [tequito.core :as tq :refer [create-beacon-wallet]]
     [app.redux :as app]))
 
@@ -67,25 +68,26 @@
   (->
     actions
     ((rx/pipe
-       (op/filter (verts/is-of-type (get app/types ::on-mount)))
+       (op/filter (verts/is-type? (get app/types :on-mount)))
        (op/map (comp reset-wallet! create-beacon-wallet (constantly nil)))
        (op/tap #(tq/set-wallet-provider client %))
-       (op/switchMap
+       (op/switch-map
          (fn [wallet]
            (->
              (rx/defer (partial tq/get-active-account wallet))
              ((rx/pipe
                (op/filter (comp not nil?))
                (op/map (comp get-address-complete :address))
-               (op/catchError (comp rx/of get-address-error)))))))))))
-
+               (op/catch-error (comp rx/of get-address-error)))))))))))
 
 (def connect-wallet-epic
   (rx/pipe
-    (op/filter (verts/is-of-type ::connect-wallet))
+    (op/filter (verts/is-type? ::connect-wallet))
     (op/map #(deref wallet-ref))
-    (op/switchMap
+    (op/switch-map
       ((rx/pipe
          (op/map connect-wallet-complete)
-         (op/catchError (comp rx/of connect-wallet-error)))
+         (op/catch-error (comp rx/of connect-wallet-error)))
        (rx/defer tq/request-permission)))))
+
+(def root-epic (ro/combine-epics init-client-epic connect-wallet-epic))

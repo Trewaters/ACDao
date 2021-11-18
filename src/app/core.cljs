@@ -10,8 +10,8 @@
     [redux.observable :refer [create-epic-middleware]]
     [tequito.core :as tq]
     [app.layout :as layout]
-    [app.main.redux :as main-redux]))
-
+    [app.main.redux :as main-redux]
+    [app.provider :as provider]))
 
 (defonce ^:private get-state (atom (constantly nil)))
 
@@ -20,7 +20,8 @@
   ([default-state]
    (let [default-state (or (@get-state) default-state)
          tq-client (tq/create-client)
-         [epic-middleware _] (create-epic-middleware {:client tq-client})
+         root-epic provider/root-epic
+         [epic-middleware run-epic] (create-epic-middleware {:client tq-client})
          store (create-store
                  (verts/combine-reducers
                    (merge
@@ -33,6 +34,7 @@
                    (dev-tools-enhancer)))]
 
      (reset! get-state (:get-state store))
+     (run-epic root-epic)
 
      (render
        ($ (.-Provider react-redux-context)
