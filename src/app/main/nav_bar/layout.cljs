@@ -10,23 +10,12 @@
             [app.ui.loading :refer [loading-pulse]]
             [app.main.nav-bar.redux :as redux]))
 
-
-
-
-(comment
-  (= (as-> "0x1234000000000000000000000000000000056789" %
-       (str/split % #"")
-       (concat (take 5 %) "..." (take-last 4 %))
-       (str/join %))
-     "0x12...6789"))
-
 (defn main []
-  (let [show-no-provider true
+  (let [show-no-provider false
         show-loading false
-        chain-name "Tezos"
         show-wrong-network false
-        address "1234"
-        block-num 4
+        chain-name "Tezos"
+        address ""
         click-on-connect (use-action redux/click-on-connect)]
 
     (d/div
@@ -56,10 +45,6 @@
            :shadow-lg
            :text-white
            :w-full)}
-
-        (and
-          (> block-num 0)
-          ($ pill (str "Block: " (.toLocaleString block-num))))
 
         (and
           (not (str/blank? address))

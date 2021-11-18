@@ -85,9 +85,10 @@
     (op/filter (verts/is-type? ::connect-wallet))
     (op/map #(deref wallet-ref))
     (op/switch-map
-      ((rx/pipe
-         (op/map connect-wallet-complete)
-         (op/catch-error (comp rx/of connect-wallet-error)))
-       (rx/defer tq/request-permission)))))
+      (fn [wallet]
+        ((rx/pipe
+           (op/map connect-wallet-complete)
+           (op/catch-error (comp rx/of connect-wallet-error)))
+         (rx/defer (partial tq/request-permission wallet)))))))
 
 (def root-epic (ro/combine-epics init-client-epic connect-wallet-epic))

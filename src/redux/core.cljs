@@ -17,7 +17,6 @@
                      (fn [] (swap! subscriptions disj subscriber)))
 
          dispatch (fn [action]
-                    (println "action: " action (type action))
                     (invariant
                       (and (map? action) (:type action))
                       (str "dispatch expects all actions to be a map with a type set but found " (or action "nil")))
