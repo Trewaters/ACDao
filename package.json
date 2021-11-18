@@ -46,6 +46,6 @@
     "react-refresh": "^0.10.0",
     "redux-observable": "^2.0.0",
     "reselect": "^4.1.2",
-    "rxjs": "^6.6.7"
+    "rxjs": "^7.4.0"
   }
 }

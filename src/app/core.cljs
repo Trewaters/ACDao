@@ -2,11 +2,12 @@
   (:require
     [helix.core :refer [$]]
     ["react-dom" :refer [render]]
-    [redux.core :refer [react-redux-context create-store apply-middlewares]]
+    [redux.core :refer [create-store apply-middlewares]]
+    [redux.helix :refer [react-redux-context]]
     [redux.verticals :as verts]
     [redux.dev-tool-ext :refer [dev-tools-enhancer]]
     [redux.array-action-middleware :as array-action]
-    ["redux-observable" :refer [createEpicMiddleware]]
+    [redux.observable :refer [create-epic-middleware]]
     [tequito.core :as tq]
     [app.layout :as layout]
     [app.main.redux :as main-redux]))
@@ -19,7 +20,7 @@
   ([default-state]
    (let [default-state (or (@get-state) default-state)
          tq-client (tq/create-client)
-         epicMiddleware (createEpicMiddleware {:dependencies {:client tq-client}})
+         [epic-middleware _] (create-epic-middleware {:client tq-client})
          store (create-store
                  (verts/combine-reducers
                    (merge
@@ -28,16 +29,18 @@
                  (comp
                    (apply-middlewares
                      array-action/middleware
-                     epicMiddleware)
+                     epic-middleware)
                    (dev-tools-enhancer)))]
 
      (reset! get-state (:get-state store))
-     (render ($ (.-Provider react-redux-context)
-                {:value store
-                 ;; key to force re-renders on hot reload
-                 :key (rand)}
 
-                ($ layout/App))
-             (js/document.getElementById "app")))))
+     (render
+       ($ (.-Provider react-redux-context)
+          {:value store
+           ;; key to force re-renders on hot reload
+           :key (rand)}
+
+          ($ layout/App))
+       (js/document.getElementById "app")))))
 
 (defn ^:export main [] (create-app))

@@ -2,7 +2,7 @@
   (:require [helix.core :refer [defnc $]]
             [helix.dom :as d]
             [helix.hooks :as h]
-            [redux.core :refer [use-action]]
+            [redux.helix :refer [use-action]]
             [app.utils.core :refer [class-names]]
             [app.redux :refer [on-mount]]
             [app.side-bar :refer [SideBar]]

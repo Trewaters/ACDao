@@ -1,7 +1,8 @@
 (ns app.ui.button
-  (:require [helix.core :refer [defnc]]
-            [helix.dom :as d]
-            [app.utils.core :refer [class-names]]))
+  (:require
+    [helix.core :refer [defnc]]
+    [helix.dom :as d]
+    [app.utils.core :refer [class-names]]))
 
 (defnc button [{:keys
                 [children

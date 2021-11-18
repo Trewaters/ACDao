@@ -3,7 +3,7 @@
             [helix.core :refer [$]]
             [helix.dom :as d]
             ; ["reselect" :as reselect]
-            [redux.core :refer [use-action]]
+            [redux.helix :refer [use-action]]
             [app.utils.core :refer [class-names]]
             [app.ui.button :refer [button]]
             [app.ui.pill :refer [pill]]
