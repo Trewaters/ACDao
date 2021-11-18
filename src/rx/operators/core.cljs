@@ -14,10 +14,10 @@
 (defn map [project]
   (.map op project))
 
-(defn switchMap [project]
-  (.map op project))
+(defn switch-map [project]
+  (.switchMap op project))
 
-(defn catchError [selector]
+(defn catch-error [selector]
   (.catchError op selector))
 
 (def ^:private -tap (.-tap op))
