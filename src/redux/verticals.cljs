@@ -12,6 +12,8 @@
   (fn
     [head & args]
     (if
+      ; if we see an error,
+      ; then act like identity
       (instance? js/Error head) head
       (apply payload-creator (into [head] args)))))
 
@@ -43,9 +45,13 @@
 
     (fn [& args]
       (let [action {:type type}
+            ; if called with error instance
+            ; payload should be an identity and return error
             payload (apply final-payload-creator args)]
+
         (cond-> action
           (not (nil? payload)) (assoc :payload payload)
+          (instance? js/Error payload) (assoc :error true)
           meta? (assoc :meta (apply meta-creator args))))))))
 
 (defn- add-meta-event [action event]
