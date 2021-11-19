@@ -7,12 +7,11 @@
     [redux.verticals :as verts]
     [redux.dev-tool-ext :refer [dev-tools-enhancer]]
     [redux.array-action-middleware :as array-action]
-    [redux.observable :refer [create-epic-middleware combine-epics]]
+    [redux.observable :refer [create-epic-middleware]]
     [tequito.core :as tq]
+    [app.redux.root-epic :refer [root-epic]]
     [app.layout :as layout]
-    [app.redux.epics.error-logger :refer [error-logger-epic]]
-    [app.main.redux :as main-redux]
-    [app.provider :as provider]))
+    [app.main.redux :as main-redux]))
 
 (defonce ^:private get-state (atom (constantly nil)))
 
@@ -21,7 +20,6 @@
   ([default-state]
    (let [default-state (or (@get-state) default-state)
          tq-client (tq/create-client)
-         root-epic provider/root-epic
          [epic-middleware run-epic] (create-epic-middleware {:client tq-client})
          store (create-store
                  (verts/combine-reducers
@@ -35,7 +33,7 @@
                    (dev-tools-enhancer)))]
 
      (reset! get-state (:get-state store))
-     (run-epic (combine-epics error-logger-epic root-epic))
+     (run-epic root-epic)
 
      (render
        ($ (.-Provider react-redux-context)

@@ -86,9 +86,11 @@
     (op/map #(deref wallet-ref))
     (op/switch-map
       (fn [wallet]
-        ((rx/pipe
-           (op/map connect-wallet-complete)
-           (op/catch-error (comp rx/of connect-wallet-error)))
-         (rx/defer (partial tq/request-permission wallet)))))))
+        (->
+          (rx/defer (partial tq/request-permission wallet))
+          ((rx/pipe
+             (op/tap #(js/console.log "x: " %))
+             (op/map connect-wallet-complete)
+             (op/catch-error (comp rx/of connect-wallet-error)))))))))
 
 (def root-epic (ro/combine-epics init-client-epic connect-wallet-epic))
