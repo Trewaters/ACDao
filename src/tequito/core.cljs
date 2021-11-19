@@ -53,4 +53,4 @@
   [wallet]
   (->
     wallet
-    (.requestPermission (clj->js {:network {:type (.-FLORENCENET NetworkType) :rpcUrl rpc-url}}))))
+    (.requestPermissions (clj->js {:network {:type (.-FLORENCENET NetworkType) :rpcUrl rpc-url}}))))
