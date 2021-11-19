@@ -31,7 +31,6 @@
   (comp clj->js (partial transform-keys camel-case)))
 
 (defn- keyword-fn [k]
-  (println k)
   (if (namespace k) (string/replace (str k) ":" "")
       (name k)))
 (comment
