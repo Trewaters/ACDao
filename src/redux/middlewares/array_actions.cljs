@@ -1,4 +1,4 @@
-(ns redux.array-action-middleware)
+(ns redux.middlewares.array-actions)
 
 (defn middleware [{:keys [dispatch]}]
   (fn [next]

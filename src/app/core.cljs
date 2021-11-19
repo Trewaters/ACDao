@@ -6,7 +6,8 @@
     [redux.helix :refer [react-redux-context]]
     [redux.verticals :as verts]
     [redux.dev-tool-ext :refer [dev-tools-enhancer]]
-    [redux.array-action-middleware :as array-action]
+    [redux.middlewares.array-actions :as array-action]
+    [redux.middlewares.only-truthies :as only-thruthies]
     [redux.observable :refer [create-epic-middleware]]
     [tequito.core :as tq]
     [app.redux.root-epic :refer [root-epic]]
@@ -28,6 +29,7 @@
                  default-state
                  (comp
                    (apply-middlewares
+                     only-thruthies/middleware
                      array-action/middleware
                      epic-middleware)
                    (dev-tools-enhancer)))]
