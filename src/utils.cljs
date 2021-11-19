@@ -30,5 +30,19 @@
   "{:foo-bar 'baz'} -> #js {'fooBar' 'baz'}"
   (comp clj->js (partial transform-keys camel-case)))
 
+(defn- keyword-fn [k]
+  (println k)
+  (if (namespace k) (string/replace (str k) ":" "")
+      (name k)))
 (comment
-  (cljkk->js {:foo-bar "baz"}))
+  (= (keyword-fn :foo) "foo")
+  (= (keyword-fn ::foo) "utils/foo"))
+
+(defn clj->js*
+  "convert clojure map to js object preserving namespaced keys"
+  [x]
+  (clj->js x :keyword-fn keyword-fn))
+
+(comment
+  (clj->js* {:foo-bar "baz"
+             ::foo-baz "baz"}))
