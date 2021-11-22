@@ -6,7 +6,7 @@
     ["@taquito/beacon-wallet" :refer [BeaconWallet]]
     ["@airgap/beacon-sdk" :refer [NetworkType BeaconEvent defaultEventCallbacks]]))
 
-(def rpc-url "https://florencenet.smartpy.io")
+(def rpc-url "https://granadanet.smartpy.io")
 
 (defn create-client []
   (let [client (new TezosToolkit rpc-url)]
@@ -53,4 +53,4 @@
   [wallet]
   (->
     wallet
-    (.requestPermissions (clj->js {:network {:type (.-FLORENCENET NetworkType) :rpcUrl rpc-url}}))))
+    (.requestPermissions (clj->js {:network {:type (.-GRANADANET NetworkType) :rpcUrl rpc-url}}))))

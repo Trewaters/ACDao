@@ -103,17 +103,23 @@
   value to the id of the value in the foo map
   (map-from-action
     #(get-in % [:payload :foo])
-    #(set-in [:foos (:id %)] %))"
+    #(assoc-in %2 [:foos (:id %1)] %1))"
   [map-action updater]
   (fn [state action]
     (updater (map-action action) state)))
 
+(comment
+  ((map-from-action
+     :payload
+     #(assoc %2 :address %1))
+   {::state {:address ""}}
+   {:payload "foo"}))
 
 (defn handle-action
   ([type default-state] (handle-action type identity default-state))
 
-  ([type reducer default-state]
-   (let [types (str/split type action-delimiter)
+  ([action-type reducer default-state]
+   (let [types (str/split action-type action-delimiter)
          presenting-types (str/join types ", ")]
      (invariant (or (fn? reducer) (map? reducer))
                 (str "Expected reducer for " presenting-types " to be a function or object with next and throw reducers"))
@@ -124,11 +130,11 @@
      (fn [state action]
        (let [state (or state default-state)
              ; convert type to string to match types array above
-             type (str (:type action))]
+             action-type (str (:type action))]
          (if
            (or
-             (not type)
-             (not (some #(= type %) types))) state
+             (not action-type)
+             (not (some #(= action-type %) types))) state
            (reducer state action)))))))
 
 (defn handle-actions [handler-map default-state]

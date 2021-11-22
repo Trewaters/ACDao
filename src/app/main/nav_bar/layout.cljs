@@ -3,19 +3,19 @@
             [helix.core :refer [$]]
             [helix.dom :as d]
             ; ["reselect" :as reselect]
-            [redux.helix :refer [use-action]]
+            [redux.helix :refer [use-action use-selector]]
             [app.utils.core :refer [class-names]]
             [app.ui.button :refer [button]]
             [app.ui.pill :refer [pill]]
             [app.ui.loading :refer [loading-pulse]]
-            [app.main.nav-bar.redux :as redux]))
+            [app.main.nav-bar.redux :as redux]
+            [app.provider :as provider]))
 
 (defn main []
   (let [show-no-provider false
         show-loading false
         show-wrong-network false
-        chain-name "Tezos"
-        address ""
+        address (use-selector provider/address-selector)
         click-on-connect (use-action redux/click-on-connect)]
 
     (d/div
@@ -49,10 +49,6 @@
         (and
           (not (str/blank? address))
           ($ pill address))
-
-        (and
-          chain-name
-          ($ pill (str "network: " chain-name)))
 
         (cond
           show-loading ($ loading-pulse)

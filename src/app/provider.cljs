@@ -47,22 +47,26 @@
    :address ""})
 
 ; selectors
-(def rinkeby?-selector #(get-in % [::state :rinkeby?]))
 (def chain-id-selector #(get-in % [::state :chain-id]))
 (def chain-name-selector (comp #(get chains % "NA") chain-id-selector))
 (def address-selector #(get-in % [::state :address]))
-(def block-num-selector #(get-in % [::state :block-num]))
 
 
-(def reducer-slicer
+(def reducer-slice
   {::state
    (verts/handle-actions
      {::connect-wallet-complete
       (verts/map-from-action
-        #(get % :payload)
-        (partial assoc :address))}
+        :payload
+        #(assoc %2 :address %1))
+
+      ::get-address-complete
+      (verts/map-from-action
+        :payload
+        #(assoc %2 :address %1))}
 
      default-state)})
+
 
 (defn init-client-epic [actions _ {:keys [client]}]
   (->
@@ -89,7 +93,7 @@
         (->
           (rx/defer (partial tq/request-permission wallet))
           ((rx/pipe
-             (op/tap #(js/console.log "x: " %))
+             (op/switch-map (partial tq/get-pkh wallet))
              (op/map connect-wallet-complete)
              (op/catch-error (comp rx/of connect-wallet-error)))))))))
 

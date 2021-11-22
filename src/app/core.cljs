@@ -11,6 +11,7 @@
     [redux.observable :refer [create-epic-middleware]]
     [tequito.core :as tq]
     [app.redux.root-epic :refer [root-epic]]
+    [app.provider :as provider]
     [app.layout :as layout]
     [app.main.redux :as main-redux]))
 
@@ -25,7 +26,8 @@
          store (create-store
                  (verts/combine-reducers
                    (merge
-                     main-redux/reducer-slice))
+                     main-redux/reducer-slice
+                     provider/reducer-slice))
                  default-state
                  (comp
                    (apply-middlewares
