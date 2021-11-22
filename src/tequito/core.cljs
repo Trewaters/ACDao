@@ -31,8 +31,8 @@
         :preferedNetwork (.-FLORENCENET NetworkType)
         :disableDefaultEvents true
         :eventHandlers
-        {(.-PAIR_INIT BeaconEvent) (.-PAIR_INIT defaultEventCallbacks)
-         (.-PAIR_SUCCESS BeaconEvent) (or pair-success identity)}}))))
+        {(.-PAIR_INIT BeaconEvent) {:handler (.-PAIR_INIT defaultEventCallbacks)}
+         (.-PAIR_SUCCESS BeaconEvent) {:handler (or pair-success identity)}}}))))
 
 (defn get-active-account
   "checks if wallet was already active. Returns a promise"
